@@ -19,7 +19,7 @@
           <a id="productos" class="nav-link" href="<?php echo base_url('ver_consultas')?>">Gestion de Consultas</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-secondary btn-login-register rounded-pill px-3" href="<?php echo base_url('salir')?>" role="button">Cerrar Sesión</a>
+          <a class="btn btn-secondary btn-brown rounded-pill px-3" href="<?php echo base_url('salir')?>" role="button">Cerrar Sesión</a>
         </li>
       </ul>
     </div>
