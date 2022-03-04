@@ -29,8 +29,8 @@
         <div class="col ">
             <h6>MEDIOS DE PAGO</h6>
             <ul>
-                <a href="<?php echo base_url('administrador')?>">
-                    <li>Panel Administrador</li>
+                <a href="<?php echo base_url('ver_carrito')?>">
+                    <li>Carrito</li>
                 </a>
             </ul>
         </div>

@@ -1,7 +1,7 @@
 <h4 class="text-center mt-3">NUEVO PRODUCTO</h4>
 <div class="container border w-50 d-flex align-items-center flex-column">
     <div class="font-sec w-100 p-4">
-        <?php echo form_open('registrar'); ?>
+        <?php echo form_open('registrar_producto'); ?>
         <div class="form-group">
             <label for="apellido">Ingrese su nombre (*)</label>
             <?php echo form_input(['name' => 'nombre', 'id' => 'nombre', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Nombre completo', 'autofocus' => 'autofocus', 'value' => set_value('nombre')]); ?>

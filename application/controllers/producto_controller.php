@@ -18,6 +18,7 @@ class Producto_Controller extends CI_Controller
         $this->load->view('plantillas/header',$data);
         $this->load->view('plantillas/navbar_admin');
         $this->load->view('backend/productos/agregar_producto',$data);
-    }	
+    }
+    
 
 }

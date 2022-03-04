@@ -70,10 +70,14 @@ $route['ver_consultas'] = 'admin_controller/ver_consultas';
 
 /*PRODUCTOS */
 $route['agregar_producto']='producto_controller/agregar_producto';
+$route['agregar_producto']='producto_controller/registrar_producto';
 
 /*CONSULTA*/
 $route['agregar_consulta']='consulta_controller/insertar_consulta';
 $route['consultas_leidas'] = 'consulta_controller/consultas_leidas';
+
+/*CARRITO*/
+$route['ver_carrito'] = 'carrito_controller/carrito_index';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
