@@ -1,0 +1,1 @@
+<p class="text-center font-sec mt-3" style="font-size: 30px;">Bienvenido: <span style="font-size: 30px;"><?php echo $nombre?></span></p>

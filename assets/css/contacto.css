@@ -1,0 +1,39 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Slab' , cursive;
+}
+#emailHelp{
+    color: rgb(128, 127, 127);
+    font-size: 14px;
+}
+.page-title{
+    color:#5b1f00;
+    font-size: 25px;
+}
+
+.form-container{
+    width: 50%;
+    /*border: 2px solid rgb(199, 199, 199);*/
+
+}
+.btn{
+    margin: auto;
+    background-color: #4e1c04;
+    border: none;
+}
+.btn:hover{
+    background-color: #743414;
+}
+
+footer{
+    border-top: 2px solid #5b1f00;
+}
+
+/*RESPONSIVE DESIGN*/
+@media only screen and (max-width:650px){
+    .form-container{
+        width: 80%;
+    }
+}
