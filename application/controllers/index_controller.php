@@ -42,17 +42,6 @@ class Index_Controller extends CI_Controller
 		echo "My name is => ", $name; 
 	}
 
-	public function suscripciones()
-	{
-		$data['titulo'] = 'suscripciones';
-		
-
-		$this->load->view('partes/head_view.php', $data);
-		$this->load->view('partes/navbar_view.php');
-		$this->load->view('suscripciones.php');
-		$this->load->view('partes/footer_view.php');
-	}
-	
 	public function terminos()
 	{
 		
@@ -63,16 +52,13 @@ class Index_Controller extends CI_Controller
 		$this->load->view('terminos');
 		$this->load->view('plantillas/footer');
 	}
-	public function productos()
-	{
-		$this->load->model('curso_model');
-		$data['cursos'] = $this->curso_model->select_cursos();
-		$data['titulo'] = 'Catalogo de productos';
+	public function productos(){
+		$data['title'] = 'Catalogo de productos';
 
-		$this->load->view('partes/head_view.php', $data);
-		$this->load->view('partes/navbar_view.php');
-		$this->load->view('catalogo.php',$data);
-		$this->load->view('partes/footer_view.php');
+		$this->load->view('plantillas/header.php', $data);
+		$this->load->view('plantillas/navbar.php');
+		$this->load->view('productos.php');
+		$this->load->view('plantillas/footer.php');
 	}
 
 	
