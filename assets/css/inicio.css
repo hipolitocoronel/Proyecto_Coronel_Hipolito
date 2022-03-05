@@ -7,13 +7,5 @@
     background-size: cover;
 }
 
-.btn-login-register{
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-}
-
-.btn-login-register:hover{
-    background-color: var(--primary-color);
-}
 
 

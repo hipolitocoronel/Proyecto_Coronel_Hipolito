@@ -17,6 +17,22 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+.font-big{
+    font-size: 27px;
+}
+
+
+
+.btn-brown{
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-brown:hover{
+    background-color: var(--primary-color);
+}
+
+
 .redes i{
     font-size: 45px;
     padding: 0 30px;

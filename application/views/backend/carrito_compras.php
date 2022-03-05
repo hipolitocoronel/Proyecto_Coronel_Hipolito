@@ -11,25 +11,32 @@
     </thead>
     <tbody>
         <tr>
-            <td>df</td>
-            <td>dfg</td>
-            <td>dfg</td>
-            <td>dfg</td>
-            <td> b5-a </td>
+            <td class="font-sec">Mate Imperial</td>
+            <td class="font-sec">1</td>
+            <td class="font-sec">3400,00</td>
+            <td class="font-sec">3400,00</td>
+            <td> <i class="fas fa push"></i> </td>
+        </tr>
+        <tr>
+            <td class="font-sec">Bombilla Imperial</td>
+            <td class="font-sec">2</td>
+            <td class="font-sec">1460,00</td>
+            <td class="font-sec">1460,00</td>
+            <td> <i class="fas fa push"></i> </td>
         </tr>
     </tbody>
 </table>
 
-<div class="container-fluid mx-2">
+<div class="container-fluid mx-3">
     <div class="row">
         <div class="col col-md-8">
             <a class="btn btn-outline-dark" href="<?php echo base_url('venta_controller/guardar_venta'); ?>"
                 role="button">Seguir Comprando</a>
         </div>
         <div class="col col-md-4 mx-auto d-flex flex-column align-items-center">
-            <p>Subtotal: $5459,00</p>
-            <p class="fs-1">Total: $6459,00</p>
-            <a class="btn btn-success" href="<?php echo base_url('venta_controller/guardar_venta'); ?>"
+            <p class="font-sec">Subtotal: $5459,00</p>
+            <p class="font-big">Total: $6459,00</p>
+            <a class="btn btn-dark btn-brown px-4" href="<?php echo base_url('venta_controller/guardar_venta'); ?>"
                 role="button">Ordenar compra</a>
         </div>
     </div>

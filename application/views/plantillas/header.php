@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/a942f5af8a.js" crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/principal.css?">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/principal.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/inicio.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 
