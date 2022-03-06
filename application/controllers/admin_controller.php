@@ -9,6 +9,7 @@ class Admin_controller extends CI_Controller {
         }else{
             $this->load->model('user_model');
 			$this->load->model('consulta_model');
+			$this->load->model('producto_model');
         }
 	}
 
@@ -30,14 +31,11 @@ class Admin_controller extends CI_Controller {
 		$this->load->view('backend/usuarios/inicio', $data);
 	}
 
-	public function ver_productos()
-	{
-		$data = array(
-			'title' => 'Gestión de Productos'
-	);
-		$this->load->view('plantillas/header',$data);		
+	public function ver_productos(){
+		$data['productos'] = $this->producto_model->select_productos();
+		$this->load->view('plantillas/header',array('title'=>'Gestión de Productos'));		
 		$this->load->view('plantillas/navbar_admin');
-		$this->load->view('backend/productos/inicio');
+		$this->load->view('backend/productos/inicio', $data);
 	}
 
 	public function ver_consultas()

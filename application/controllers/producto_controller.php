@@ -7,6 +7,7 @@ class Producto_Controller extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+        $this->load->model('producto_model');
 	}
 
 	public function agregar_producto_index(){
@@ -45,8 +46,7 @@ class Producto_Controller extends CI_Controller
         }
     }
 
-    function editar_producto($id)
-    {
+    function editar_producto($id){
         
         $data['categorias'] = $this->producto_model->select_categorias();
         $producto = $this->producto_model->select_producto_id($id);
@@ -67,8 +67,7 @@ class Producto_Controller extends CI_Controller
         $this->load->view('partes/footer_view');
     }
 
-    public function activar_producto($id = !NULL)
-    {
+    public function activar_producto($id = !NULL){
         $data = array(
             'producto_estado' => 1
         );
@@ -76,8 +75,7 @@ class Producto_Controller extends CI_Controller
         $this->gestionar_productos();
     }
 
-    public function eliminar_producto($id = !NULL)
-    {
+    public function eliminar_producto($id = !NULL){
         $data = array(
             'producto_estado' => 0
         );
@@ -86,8 +84,7 @@ class Producto_Controller extends CI_Controller
     }
 
 
-    public function actualizar_producto($id)
-    {
+    public function actualizar_producto($id){
         //validaciones de formulario
         $this->form_validation->set_rules('producto_nombre', 'Nombre del producto', 'required');
         $this->form_validation->set_rules('descripcion', 'Descripcion del producto', 'required');
@@ -140,8 +137,7 @@ class Producto_Controller extends CI_Controller
 
 
 
-    public function guardar_producto()
-    {
+    public function guardar_producto(){
         $config['upload_path'] = './uploads/';
         $config['allowed_types'] = 'jpg|JPG|jpeg|JPEG|png|PNG';
         $config['remove_spaces'] = TRUE;
@@ -157,29 +153,29 @@ class Producto_Controller extends CI_Controller
             } else {
                 //agrega los detalles del producto a un array
                 $data = array(
-                    'producto_nombre' => $this->input->post('nombre'),
-                    'producto_categoria' => $this->input->post('categoria'),
-                    'producto_descripcion' => $this->input->post('descripcion'),
-                    'producto_precio' => $this->input->post('precio'),
-                    'producto_imagen' => $_FILES['imagen']['name'],
-                    'producto_estado' => 1
+                    'nombre' => $this->input->post('nombre'),
+                    'descripcion' => $this->input->post('descripcion'),
+                    'idCategoria' => $this->input->post('categoria'),
+                    'precio' => $this->input->post('precio'),
+                    'img_producto' => $_FILES['imagen']['name'],
+                    'estado' => 1
                 );
                 //guarda producto
                 $this->producto_model->guardar_producto($data);
-                redirect('agregar');
+                $this->agregar_producto_index();
             }
         } else {
             //guardar el producto
             $data = array(
-                'producto_nombre' => $this->input->post('nombre'),
-                'producto_categoria' => $this->input->post('categoria'),
-                'producto_descripcion' => $this->input->post('descripcion'),
-                'producto_precio' => $this->input->post('precio'),
-                'producto_imagen' => $_FILES['imagen']['name'],
-                'producto_estado' => 1
+                    'nombre' => $this->input->post('nombre'),
+                    'descripcion' => $this->input->post('descripcion'),
+                    'idCategoria' => $this->input->post('categoria'),
+                    'precio' => $this->input->post('precio'),
+                    'img_producto' => $_FILES['imagen']['name'],
+                    'estado' => 1
             );
             $this->producto_model->guardar_producto($data);
-            redirect('agregar');
+            $this->agregar_producto_index();
         }
     }
 

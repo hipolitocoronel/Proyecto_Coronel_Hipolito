@@ -12,11 +12,12 @@
         </tr>
     </thead>
     <tbody>
+        <?php foreach($productos as $producto){ ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $producto->idProducto ?></td>
+                    <td><?php echo $producto->nombre ?></td>
+                    <td><?php echo $producto->descripcion ?></td>
+                    <td><?php echo $producto->precio ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="">
                             <a href="#" class="btn btn-warning">Editar</a>
@@ -24,5 +25,6 @@
                         </div>
                     </td>
                 </tr>
+        <?php }?>
     </tbody>
 </table>

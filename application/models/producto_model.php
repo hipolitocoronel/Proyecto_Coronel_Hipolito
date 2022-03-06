@@ -3,37 +3,38 @@
         function __construct(){
             parent::__construct();
         }
-
-        public function saveUser($data){
-            $this->db->insert('usuarios', $data);
+        public function guardar_producto($data){
+            $this->db->insert('producto',$data);
         }
-
-        //BUSCA UN USUARIO SEGUN SU MAIL Y PASSWORD
-        public function searchUser($user, $password){
+    
+        public function actualizar_producto($data,$id){
+            $this->db->where('idProducto',$id);
+            $this->db->update('producto',$data);
+        }
+        
+        public function select_categorias(){
+            $query = $this->db->get('categoria');
+            return $query->result();
+        }
+        public function select_idProducto($id){
             $this->db->select('*');
-            $this->db->from('usuarios');
-            $this->db->where('correo', $user);
-            $this->db->where('password', $password);
+            $this->db->from('producto');
+            $this->db->where('idProducto',$id);
             $query = $this->db->get();
-            $resultado = $query->row();
-            return $resultado;
+            return $query->result();
         }
-
-        //BUSCA UN USUARIO SEGUN SU ID
-        public function searchUserId($id){
+    
+        public function get_idProducto($id){
             $this->db->select('*');
-            $this->db->from('usuarios');
-            $this->db->where('idPersona', $id);
+            $this->db->from('producto');
+            $this->db->where('idProducto',$id);
             $query = $this->db->get();
-            $result = $query->row();
-            return $result;
+            return $query->row();
         }
-
-      //SELECCIONA Y RETORNA TODOS LOS USUARIOS
-        public function select_usuarios(){
+        public function select_productos(){
             $this->db->select('*');
-            $this->db->from('usuarios');
-            $this->db->join('perfil','perfil.idPerfil = usuarios.idPerfil');
+            $this->db->from('producto');
+            $this->db->join('categoria','categoria.idCategoria = producto.idCategoria');
             $query = $this->db->get();
             return $query->result();
         }

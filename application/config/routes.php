@@ -71,6 +71,7 @@ $route['ver_consultas'] = 'admin_controller/ver_consultas';
 
 /*PRODUCTOS */
 $route['agregar_producto']='producto_controller/agregar_producto_index';
+$route['guardar_producto']='producto_controller/guardar_producto';
 
 /*CONSULTA*/
 $route['agregar_consulta']='consulta_controller/insertar_consulta';
