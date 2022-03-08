@@ -8,7 +8,7 @@
             <span class="text-danger"><?php echo form_error('nombre'); ?> </span>
         </div>
         <div class="form-group">
-            <label for="descripcion">Ingrese una descripcion (*)</label>
+            <label for="descripcion">Ingrese una descripcmion (*)</label>
             <?php echo form_input(['name' => 'descripcion', 'id' => 'descripcion', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Descripcion Breve', 'autofocus' => 'autofocus', 'value' => set_value('descripcion')]); ?>
             <span class="text-danger"><?php echo form_error('descripcion'); ?> </span>
         </div>
