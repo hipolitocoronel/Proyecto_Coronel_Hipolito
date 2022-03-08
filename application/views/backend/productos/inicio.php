@@ -20,8 +20,12 @@
                     <td><?php echo $producto->precio ?></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="">
-                            <a href="#" class="btn btn-warning">Editar</a>
-                            <a href="#" class="btn btn-danger">Eliminar</a>
+                            <a href="<?php echo base_url("producto_controller/editar_producto_index/$producto->idProducto")?>" class="btn btn-warning">Editar</a>
+                            <?php if($producto->estado==1){?>
+                            <a href="#" class="btn btn-danger">Desactivar</a>
+                            <?php } else{ ?>
+                                <a href="#" class="btn btn-success">Activar</a>
+                            <?php }?>
                         </div>
                     </td>
                 </tr>

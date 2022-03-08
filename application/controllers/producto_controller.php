@@ -46,25 +46,24 @@ class Producto_Controller extends CI_Controller
         }
     }
 
-    function editar_producto($id){
+    function editar_producto_index($id){
         
         $data['categorias'] = $this->producto_model->select_categorias();
-        $producto = $this->producto_model->select_producto_id($id);
+        $producto = $this->producto_model->select_idProducto($id);
 
         foreach ($producto as $row) {
-            $data['producto_id'] = $row->producto_id;
-            $data['producto_nombre'] = $row->producto_nombre;
-            $data['categoria'] = $row->producto_categoria;
-            $data['descripcion'] = $row->producto_descripcion;
-            $data['imagen'] = $row->producto_imagen;
-            $data['precio'] = $row->producto_precio;
-            $data['estado'] = $row->producto_estado;
+            $data['idProducto'] = $row->idProducto;
+            $data['producto'] = $row->nombre;
+            $data['categoria'] = $row->idCategoria;
+            $data['descripcion'] = $row->descripcion;
+            $data['imagen'] = $row->img_producto;
+            $data['precio'] = $row->precio;
+            $data['estado'] = $row->estado;
         }  
         
-        $this->load->view('partes/head_view', array('titulo' => "Editar producto"));
-        $this->load->view('partes/navbar_admin_view');
-        $this->load->view('back/productos/gestionar_producto_edicion_view', $data);
-        $this->load->view('partes/footer_view');
+        $this->load->view('plantillas/header', array('title' => "Editar producto"));
+        $this->load->view('plantillas/navbar_admin');
+        $this->load->view('backend/productos/editar_producto', $data);
     }
 
     public function activar_producto($id = !NULL){
