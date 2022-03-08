@@ -29,9 +29,6 @@
         <div class="col ">
             <h6>MEDIOS DE PAGO</h6>
             <ul>
-                <a href="<?php echo base_url('ver_carrito')?>">
-                    <li>Carrito</li>
-                </a>
             </ul>
         </div>
         <div class="col d-flex flex-column pl-5">

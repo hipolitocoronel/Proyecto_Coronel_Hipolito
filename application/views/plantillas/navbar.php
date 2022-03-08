@@ -27,7 +27,15 @@
                     <a id="productos" class="nav-link" href="<?php echo base_url('ver_carrito')?>">
                         <i class="fas fa-shopping-bag font-big"></i>
                         <span
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">1</span>
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                            <?php 
+                            if ($cart = $this->cart->contents()) { 
+                                echo $this->cart->total_items();
+                            }else{
+                                echo 0;
+                            }
+                            ?>
+                        </span>
                     </a>
                 </li>
                 <div class="dropdown">

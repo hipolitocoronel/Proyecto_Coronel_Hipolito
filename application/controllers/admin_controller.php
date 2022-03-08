@@ -10,6 +10,7 @@ class Admin_controller extends CI_Controller {
             $this->load->model('user_model');
 			$this->load->model('consulta_model');
 			$this->load->model('producto_model');
+			$this->load->model('ventas_model');
         }
 	}
 
@@ -45,5 +46,21 @@ class Admin_controller extends CI_Controller {
 		$this->load->view('plantillas/navbar_admin');
 		$this->load->view('backend/consultas/inicio', $data);
 	}
+
+	public function ver_ventas(){
+        $data['ventas'] = $this->ventas_model->select_ventas();
+		$this->load->view('plantillas/header',array('title'=>"Listado de Ventas"));		
+		$this->load->view('plantillas/navbar_admin');
+		$this->load->view('backend/ver_ventas', $data);
+    }
+
+	public function ver_detalle_venta($id){
+        $data['detalle_ventas'] = $this->ventas_model->select_detalle_ventas($id);
+        $data['id'] = $id;
+
+		$this->load->view('plantillas/header',array('title'=>"Detalle de Venta"));		
+		$this->load->view('plantillas/navbar_admin');
+		$this->load->view('backend/ver_detalle_venta', $data);
+    }
 
 }

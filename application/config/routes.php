@@ -68,7 +68,7 @@ $route['administrador'] = 'admin_controller/admin_index';
 $route['ver_usuarios'] = 'admin_controller/ver_usuarios';
 $route['ver_productos'] = 'admin_controller/ver_productos';
 $route['ver_consultas'] = 'admin_controller/ver_consultas';
-
+$route['ver_ventas'] = 'admin_controller/ver_ventas';
 /*PRODUCTOS */
 $route['agregar_producto']='producto_controller/agregar_producto_index';
 $route['editar_producto']='producto_controller/editar_producto_index';
@@ -78,8 +78,12 @@ $route['guardar_producto']='producto_controller/guardar_producto';
 $route['agregar_consulta']='consulta_controller/insertar_consulta';
 $route['consultas_leidas'] = 'consulta_controller/consultas_leidas';
 
+/*VENTA*/
+$route['ver_consultas'] = 'venta_controller/ver_ventas';
+
 /*CARRITO*/
 $route['ver_carrito'] = 'carrito_controller/carrito_index';
+$route['comprar'] = 'carrito_controller/agregar_carrito';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

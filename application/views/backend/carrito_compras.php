@@ -11,32 +11,32 @@
         </tr>
     </thead>
     <tbody>
+        <?php foreach($cart as $item){?>
         <tr>
-            <td class="font-sec">Mate Imperial</td>
-            <td class="font-sec">1</td>
-            <td class="font-sec">3400,00</td>
-            <td class="font-sec">3400,00</td>
-            <td> <i class="fas fa push"></i> </td>
+            <td class="font-sec"><?php echo $item['name']?></td>
+            <td class="font-sec"><?php echo $item['qty']?></td>
+            <td class="font-sec">$<?php echo $item['price']?></td>
+            <td class="font-sec">$<?php echo $item['price']?></td>
+            <td>
+                <a href="<?php echo base_url('carrito_controller/borrar/' . $item['rowid'])?>" role="button">
+                    <i class="fas fa-times pr-3"></i>
+                </a>
+                
+            </td>
         </tr>
-        <tr>
-            <td class="font-sec">Bombilla Imperial</td>
-            <td class="font-sec">2</td>
-            <td class="font-sec">1460,00</td>
-            <td class="font-sec">1460,00</td>
-            <td> <i class="fas fa push"></i> </td>
-        </tr>
+        <?php }?>
     </tbody>
 </table>
 
 <div class="container-fluid mx-3">
     <div class="row">
         <div class="col col-md-8">
-            <a class="btn btn-outline-dark" href="<?php echo base_url('venta_controller/guardar_venta'); ?>"
+            <a class="btn btn-outline-dark" href="<?php echo base_url('productos'); ?>"
                 role="button">Seguir Comprando</a>
         </div>
         <div class="col col-md-4 mx-auto d-flex flex-column align-items-center">
-            <p class="font-sec">Subtotal: $5459,00</p>
-            <p class="font-big">Total: $6459,00</p>
+            <p class="font-sec">Subtotal: $<?php echo number_format($this->cart->total(), 2)?></p>
+            <p class="font-big">Total: $<?php echo number_format($this->cart->total(), 2)?></p>
             <a class="btn btn-dark btn-brown px-4" href="<?php echo base_url('venta_controller/guardar_venta'); ?>"
                 role="button">Ordenar compra</a>
         </div>
