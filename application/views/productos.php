@@ -9,7 +9,7 @@
                 </div>
                 <ul class="col-8">
                     <li class="font-sec font-big text-dark"><?php echo $producto->nombre?></li>
-                    <li class="font-sec font-big text-black-50">Categoria: <?php echo $producto->categoria?></li>
+                    <li class="font-sec font-big text-black-50">Categoria: <?php echo $producto->categoria_descripcion?></li>
                 </ul>
                 <div class="col-2 bg-dangr">
                     <p class="font-big"><?php echo $producto->precio?></p>

@@ -7,9 +7,14 @@ class Carrito_controller extends CI_Controller {
 	}
 
 	public function carrito_index(){
+		if(!$this->cart->contents()){
+            $data['message'] = 'Tu carrito está vacio';
+        }else{
+            $data['message'] = '';
+        }
 		$this->load->view('plantillas/header',array("title"=>'Carrito de Compras'));		
-		$this->load->view('plantillas/navbar_admin');
-		$this->load->view('backend/carrito_compras');
+		$this->load->view('plantillas/navbar');
+		$this->load->view('backend/carrito_compras', $data);
 	}
 
 	public function agregar_carrito(){

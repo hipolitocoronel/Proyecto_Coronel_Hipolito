@@ -7,6 +7,7 @@ class Index_Controller extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('producto_model');
 	}
 
 	public function index()
@@ -36,12 +37,6 @@ class Index_Controller extends CI_Controller
 		$this->load->view('plantillas/footer');
 	}
 
-	public function test(){
-		$this->load->model("my_model");
-		$name = $this->my_model->firstName();
-		echo "My name is => ", $name; 
-	}
-
 	public function terminos()
 	{
 		
@@ -53,11 +48,10 @@ class Index_Controller extends CI_Controller
 		$this->load->view('plantillas/footer');
 	}
 	public function productos(){
-		$data['title'] = 'Catalogo de productos';
-
-		$this->load->view('plantillas/header.php', $data);
+		$data['productos'] = $this->producto_model->select_productos();
+		$this->load->view('plantillas/header.php', array('title'=>'Catalogo de productos'));
 		$this->load->view('plantillas/navbar.php');
-		$this->load->view('productos.php');
+		$this->load->view('productos.php', $data);
 		$this->load->view('plantillas/footer.php');
 	}
 

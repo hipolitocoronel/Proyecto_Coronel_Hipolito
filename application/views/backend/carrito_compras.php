@@ -1,4 +1,5 @@
 <h4 class="mx-4 mt-4">Carrito de Compras</h4>
+<?php if ($cart = $this->cart->contents()) { ?>
 <table class="table table-hover mx-4">
     <thead>
         <tr>
@@ -41,3 +42,12 @@
         </div>
     </div>
 </div>
+
+<?php } else{?>
+<div class="text-center">
+    
+    <h4 class="text-center mt-5"><?php echo $message ?></h4>
+    <a class="btn btn-outline-dark" href="<?php echo base_url('productos'); ?>"
+        role="button">VOLVER A LA TIENDA</a>
+</div>
+<?php } ?>
