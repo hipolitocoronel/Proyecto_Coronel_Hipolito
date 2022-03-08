@@ -10,7 +10,7 @@
         <div class="form-group">
             <label for="descripcion">Ingrese una descripcion (*)</label>
             <?php echo form_input(['name' => 'descripcion', 'id' => 'descripcion', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Descripcion Breve', 'autofocus' => 'autofocus', 'value' => set_value('descripcion')]); ?>
-            <span class="text-danger"><?php echo form_error('descripcionn'); ?> </span>
+            <span class="text-danger"><?php echo form_error('descripcion'); ?> </span>
         </div>
         <div class="form-group">
             <label for="categoria">Seleccione una categoria (*)</label>
