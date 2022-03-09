@@ -26,9 +26,9 @@ class Ventas_model extends CI_Model
     public function select_detalle_ventas($id){
         $this->db->select('*');
         $this->db->from('detalle_venta');
-        $this->db->where('idVenta',$id);
+        $this->db->where('idVentaDet',$id);
 
-        $this->db->join('venta','venta.idVenta = detalle_venta.idVenta');
+        $this->db->join('venta','venta.idVenta = detalle_venta.idVentaDet');
         $this->db->join('producto','producto.idProducto = detalle_venta.idProducto');
         $query = $this->db->get();
         return $query->result();

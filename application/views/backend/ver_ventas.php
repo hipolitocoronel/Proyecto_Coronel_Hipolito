@@ -20,7 +20,7 @@
             <td><?php echo $venta->venta_fecha; ?></td>
             <td>
 
-                <a href="<?php base_url("admin_controller/ver_detalle_venta/$venta->idVenta")?>"
+                <a href="<?php echo base_url("admin_controller/ver_detalle_venta/$venta->idVenta")?>"
                     class="btn btn-outline-dark">Ver detalle</a>
 
             </td>

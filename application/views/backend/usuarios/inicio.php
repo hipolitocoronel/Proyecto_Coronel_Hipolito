@@ -29,12 +29,12 @@
                         if($usuario->estado==1){ ?>
                             <div class="btn-group w-100" role="group" aria-label="">
                                 <a href="#" class="btn btn-warning">EDITAR</a>
-                                <a href="#" class="btn btn-danger">DESACTIVAR</a>
+                                <a href="<?php echo base_url("user_controller/eliminar_usuario/$usuario->idUsuario")?>" class="btn btn-danger">DESACTIVAR</a>
                             </div>
                         <?php } else{?><!--FIN IF-->
                                     <div class="btn-group w-100" role="group" aria-label="">
                                         <a href="#" class="btn btn-warning">EDITAR</a>
-                                        <a href="#" class="btn btn-success">ACTIVAR....!</a>
+                                        <a href="<?php echo base_url("user_controller/activar_usuario/$usuario->idUsuario")?>" class="btn btn-success">ACTIVAR....!</a>
                                     </div>
                                 <?php }?> <!--FIN ELSE-->
                 <?php }?> <!--FIN ELSE -->                       

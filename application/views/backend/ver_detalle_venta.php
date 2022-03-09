@@ -1,6 +1,6 @@
 <!--<a href="?controller=empleados&action=guardar" class="btn btn-success my-2"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar Empleado</a> -->
 
-<h3 class="mt-3 text-center">Detalle de venta: ID <?php echo $data['id']?></h3>
+<h3 class="mt-3 text-center">Detalle de venta: ID <?php echo $id?></h3>
 <table class="table table-bordered mx-4">
     <thead>
         <tr>

@@ -31,7 +31,7 @@ class Venta_controller extends CI_Controller
         foreach ($cart as $item) {
             //encabezado de Detalle de venta. (contiene los detalles del producto)
             $detalle_venta = array(
-                'idVenta' => $venta_id,
+                'idVentaDet' => $venta_id,
                 'idProducto' => $item['id'],
                 'detalle_cantidad' => $item['qty'],
                 'detalle_precio' => $item['price']

@@ -78,8 +78,6 @@ $route['guardar_producto']='producto_controller/guardar_producto';
 $route['agregar_consulta']='consulta_controller/insertar_consulta';
 $route['consultas_leidas'] = 'consulta_controller/consultas_leidas';
 
-/*VENTA*/
-$route['ver_consultas'] = 'venta_controller/ver_ventas';
 
 /*CARRITO*/
 $route['ver_carrito'] = 'carrito_controller/carrito_index';

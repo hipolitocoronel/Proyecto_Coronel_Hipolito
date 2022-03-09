@@ -29,6 +29,41 @@ class User_controller extends CI_Controller {
 		$this->load->view('plantillas/footer');
 	}
 
+    public function activar_usuario($id)
+    {
+        $data = array(
+            'estado' => 1
+        );
+        $this->user_model->actualizar_usuario($data, $id);
+        redirect('ver_usuarios');
+    }
+
+    public function eliminar_usuario($id)
+    {
+        $data = array(
+            'estado' => 0
+        );
+        $this->user_model->actualizar_usuario($data, $id);
+        redirect('ver_usuarios');
+    }
+
+    function editar_usuario($id)
+    {
+        $usuario = $this->user_model->buscar_usuario_id($id);
+        $perfil = $this->user_model->select_perfiles();
+
+        $data['id'] = $usuario->idUsuario;
+        $data['nombre'] = $usuario->nombre;
+        $data['email'] = $usuario->email;
+        $data['password'] = base64_decode($usuario->password);
+        $data['idPerfil'] = $usuario->idPerfil;
+        $data['perfil'] = $perfil;
+
+        $this->load->view('plantillas/header', array('title' => "Editar USUARIO"));
+        $this->load->view('plantillas/navbar_admin');
+        $this->load->view('backend/usuarios/editar_usuario', $data);
+    }
+
     public function iniciar_sesion(){
         //FALTA VERIFICAR SI EL USUARIO ESTA DADO DE BAJA
         $this->form_validation->set_rules('correo', 'Usuario', 'required');
@@ -116,6 +151,8 @@ class User_controller extends CI_Controller {
 		$this->user_model->saveUser($user);
 		redirect('principal');
 	}
+
+
 
     public function cerrar_sesion()
     {

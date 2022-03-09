@@ -37,4 +37,15 @@
             $query = $this->db->get();
             return $query->result();
         }
+
+        public function select_perfiles(){
+        $this->db->select('*');
+        $this->db->from('perfil');
+        $query = $this->db->get();
+        return $query->result();;
+        }
+        public function actualizar_usuario($data,$id){
+            $this->db->where('idUsuario',$id);
+            $this->db->update('usuarios',$data);
+        }
     }
