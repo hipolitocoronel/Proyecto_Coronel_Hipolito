@@ -55,6 +55,7 @@ $route['contacto'] = 'index_controller/contacto';
 $route['nosotros'] = 'index_controller/nosotros';
 $route['terminos'] = 'index_controller/terminos';
 $route['productos'] = 'index_controller/productos';
+$route['venta'] = 'index_controller/venta_index';
 
 /*LOGIN*/
 $route['registrar'] = 'user_controller/registerUser';
@@ -69,13 +70,14 @@ $route['ver_usuarios'] = 'admin_controller/ver_usuarios';
 $route['ver_productos'] = 'admin_controller/ver_productos';
 $route['ver_consultas'] = 'admin_controller/ver_consultas';
 $route['ver_ventas'] = 'admin_controller/ver_ventas';
+
 /*PRODUCTOS */
 $route['agregar_producto']='producto_controller/agregar_producto_index';
 $route['editar_producto']='producto_controller/editar_producto_index';
-$route['guardar_producto']='producto_controller/guardar_producto';
+$route['guardar_producto']='producto_controller/registrar_producto';
 
 /*CONSULTA*/
-$route['agregar_consulta']='consulta_controller/insertar_consulta';
+$route['agregar_consulta']='consulta_controller/registrar_consulta';
 $route['consultas_leidas'] = 'consulta_controller/consultas_leidas';
 
 

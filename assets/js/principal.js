@@ -1,20 +1,28 @@
-const inicio=document.querySelector('#inicio');
-const contacto=document.querySelector('#contacto');
-const nosotros=document.querySelector('#nosotros');
-const productos=document.querySelector('#productos');
-const items=document.querySelectorAll('.nav-link');
+var myModal = document.getElementById('modalProducto')
+var myInput = document.getElementById('cantidad')
 
-function navbar(item){
-    item.addEventListener('click', function(){
-        for(var item of items){
-            item.classList.remove('active');
-        }
+myModal.addEventListener('shown.bs.modal', function () {
+   // Button that triggered the modal
+  var button = event.relatedTarget
+  var id = button.getAttribute('data-bs-id')
+  var stock = button.getAttribute('data-bs-stock')
+  var desc = button.getAttribute('data-bs-descripcion')
+  var precio = button.getAttribute('data-bs-precio')
+  var categoria = button.getAttribute('data-bs-categoria')
+  var img = button.getAttribute('data-bs-img')
+  var nombre = button.getAttribute('data-bs-nombre')
 
-        item.classList.add('active');
-    })
-}
 
-navbar(inicio);
-navbar(contacto);
-navbar(nosotros);
-navbar(productos);
+  myModal.querySelector('.precio-text').textContent=("$ " + precio)
+  myModal.querySelector('.categoria-text').textContent=categoria
+  myModal.querySelector('.desc-text').textContent=desc
+  myModal.querySelector('.stock-text').textContent=stock
+  myModal.querySelector('.stock-text').textContent=stock
+  myModal.querySelector('.stock-text').textContent=stock
+  myModal.querySelector('.modal-title').textContent=nombre
+  myModal.querySelector('.img-text').src =("uploads/"+img);
+
+
+  
+})
+

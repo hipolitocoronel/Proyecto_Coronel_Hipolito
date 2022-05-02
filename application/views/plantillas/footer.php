@@ -7,48 +7,75 @@
         <a href=""><i class="fab fa-youtube"></i></a>
     </div>
 </div>
-<footer>
-    <div class="row pt-3">
-        <div class="col d-flex flex-column pl-5">
-            <h6>NAVEGACIÓN</h6>
-            <ul>
-                <a href="<?php echo base_url('principal')?>">
-                    <li>Inicio</li>
-                </a>
-                <a href="">
-                    <li>Productos</li>
-                </a>
-                <a href="<?php echo base_url('contacto')?>">
-                    <li>Contacto</li>
-                </a>
-                <a href="<?php echo base_url('terminos')?>">
-                    <li>Terminos</li>
-                </a>
-            </ul>
+<!-- Footer -->
+<footer class="text-center text-lg-start ">
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-xs-12 col-md-4  mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        NAVEGACIÓN
+                    </h6>
+                    <p>
+                        <a href="<?php echo base_url('/')?>" class="font-sec text-decoration-none text-light">Inicio</a>
+                    </p>
+                    <p>
+                        <a href="<?php echo base_url('pagina_proceso')?>" class="font-sec text-decoration-none text-light">Productos</a>
+                    </p>
+                    <p>
+                        <a href="<?php echo base_url('contacto')?>" class="font-sec text-decoration-none text-light">Contacto</a>
+                    </p>
+                    <p>
+                        <a href="<?php echo base_url('terminos')?>" class="font-sec text-decoration-none text-light">Terminos</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-xs-12 col-md-4  mx-auto mb-md-0 mb-4 ">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        metodos de pago
+                    </h6>
+                    <p class="font-sec">Efectivo</p>
+                    <p class="font-sec">Tarjeta de Crédito</p>
+                    <p class="font-sec">Tarjeta de Debito</p>
+                    <p class="font-sec">Mercado Pago</p>
+                </div>
+                <!-- Grid column -->
+                <div class="col-xs-12 col-md-4  mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Contacto
+                    </h6>
+                    <p class="font-sec"><i class="fas fa-home me-3"></i> Paraguay 1750 CP:3400</p>
+                    <p class="font-sec">
+                        <i class="fas fa-envelope me-3"></i>
+                        arandu@gmail.com
+                    </p>
+                    <p class="font-sec"><i class="fas fa-phone me-3"></i> + 3794 - 442451</p>
+                    <p class="font-sec"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
         </div>
-        <div class="col ">
-            <h6>MEDIOS DE PAGO</h6>
-            <ul>
-            </ul>
-        </div>
-        <div class="col d-flex flex-column pl-5">
-            <h6>CONTÁCTANOS</h6>
-            <p><i class="fas fa-phone pr-1"></i> 3782-434142</p>
-            <p><i class="fas fa-envelope pr-1"></i>arandu@gmail.com</p>
-        </div>
-        <div class="col col-md-12 font-sec border-top text-center py-2">
-            <p>
-                Copyright Arandú - 2022. Todos los derechos reservados. Dessarrollado por <b>Hipólito Coronel</b>
-            </p>
-        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4 font-sec border-top" style="background-color: rgba(0, 0, 0, 0.05);">
+        © Copyright Arandú - 2022. Todos los derechos reservados. Dessarrollado por <b>Hipólito Coronel</b>
     </div>
-</footer>
+    <!-- Copyright -->
 
+    <script src="<?php echo base_url('assets/js/principal.js')?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    </body>
 
-<script src="<?php echo base_url()?>assets/js/principa.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-</script>
-</body>
-
-</html>
+    </html>

@@ -39,6 +39,13 @@
     color: var(--secondary-color);
 }
 
+.color-brown{
+    color: var(--primary-color) !important;
+}
+.color-brown:hover{
+    color: var(--secondary-color) !important;
+}
+
 body{
     overflow-x: hidden;
 }
@@ -55,3 +62,22 @@ footer  p, li {
     color: #fff;
     list-style: none;
 }
+
+
+
+@media screen and (max-width: 600px) {
+    *{
+        font-size: 15px;
+    }
+
+    .font-big{
+        font-size: 20px;
+    }
+
+    .text-white{
+        text-align: center;
+    }
+    .banner-botones{
+        width: 100% !important;
+    }
+  } 

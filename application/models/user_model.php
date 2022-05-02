@@ -23,7 +23,7 @@
         public function searchUserId($id){
             $this->db->select('*');
             $this->db->from('usuarios');
-            $this->db->where('idPersona', $id);
+            $this->db->where('idUsuario', $id);
             $query = $this->db->get();
             $result = $query->row();
             return $result;

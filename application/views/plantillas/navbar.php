@@ -5,20 +5,20 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav  d-flex justify-content-end  w-100 ">
+                <li class="nav-item active">
                     <a id="inicio" class="nav-link active" aria-current="page"
                         href="<?php echo base_url('principal')?>">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a id="productos" class="nav-link" href="<?php echo base_url('productos')?>">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a id="contacto" class="nav-link" href="<?php echo base_url('contacto')?>">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a id="nosotros" class="nav-link" href="<?php echo base_url('nosotros')?>">Sobre Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a id="productos" class="nav-link" href="<?php echo base_url('productos')?>">Productos</a>
                 </li>
 
                 <!-- Si el usuario inicio Sesion -->
@@ -27,7 +27,7 @@
                     <a id="productos" class="nav-link" href="<?php echo base_url('ver_carrito')?>">
                         <i class="fas fa-shopping-bag font-big"></i>
                         <span
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                            class="position-relative top-0 start-500 translate-middle badge rounded-pill bg-warning">
                             <?php 
                             if ($cart = $this->cart->contents()) { 
                                 echo $this->cart->total_items();
