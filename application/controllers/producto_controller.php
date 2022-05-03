@@ -87,7 +87,7 @@ class Producto_Controller extends CI_Controller
         //validaciones de formulario
         $this->form_validation->set_rules('nombre', 'Nombre del producto', 'required');
         $this->form_validation->set_rules('descripcion', 'Descripcion del producto', 'required');
-        $this->form_validation->set_rules('precio', 'Precio del producto', 'required|numeric');
+
 
         $this->form_validation->set_rules(
             'categoria',
@@ -203,16 +203,6 @@ class Producto_Controller extends CI_Controller
         }
     }
 
-    public function get_product_by_id()
-    {
-        $id = $this->input->post('idProducto');
-        $data = $this->producto_model->select_idProducto($id); 
-        $arr = array('success' => false, 'data' => '');
-        if($data){
-            $arr = array('success' => true, 'data' => $data);
-        }
-        echo json_encode($arr);
-    }
     
 
 }
