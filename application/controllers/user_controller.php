@@ -66,10 +66,14 @@ class User_controller extends CI_Controller {
 
     public function actualizar_usuario($id)
     {
+        $usuario = $this->user_model->searchUserId($id);
         //reglas de formularios
         $this->form_validation->set_rules('nombre', 'Nombre del usuario', 'required');
         $this->form_validation->set_rules('correo', 'Email', 'required|valid_email');
-        $this->form_validation->set_rules('perfil', 'Seleccionar un perfil', 'required|callback_select_validate');
+        if($usuario->idPerfil==2){
+            $this->form_validation->set_rules('perfil', 'Seleccionar un perfil', 'required|callback_select_validate');
+        }
+        
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
         //mensajes
         $this->form_validation->set_message('valid_email', 'El campo %s debe ser un mail válido');
@@ -80,7 +84,8 @@ class User_controller extends CI_Controller {
         //comprueba si se ingreso correctamente los formularios
         if ($this->form_validation->run() == FALSE) {
             $this->editar_usuario($id);
-        } else {
+        } else if($usuario->idPerfil==2) {
+
             $data = array(
                 'nombre' => $this->input->post('nombre'),
                 'correo' => $this->input->post('correo'),
@@ -89,7 +94,20 @@ class User_controller extends CI_Controller {
             );
 
             $this->user_model->actualizar_usuario($data, $id);
+            $_SESSION['message']="Usuario actualizado correctamnte";
             redirect('ver_usuarios');
+        }else{
+            $data = array(
+                'nombre' => $this->input->post('nombre'),
+                'correo' => $this->input->post('correo'),
+                'password' => base64_encode($this->input->post('password')),
+                'idPerfil' => 1
+            );
+
+            $this->user_model->actualizar_usuario($data, $id);
+            $_SESSION['message']="Usuario actualizado correctamnte";
+            redirect('ver_usuarios');
+            
         }
 
     }
@@ -177,7 +195,9 @@ class User_controller extends CI_Controller {
 		);
 		$this->load->model('user_model');
 		$this->user_model->saveUser($user);
-		redirect('principal');
+
+        $_SESSION['message']="Cuanta creada correctamnte, por favor inicie sesión!";
+		$this->login_index();
 	}
 
 

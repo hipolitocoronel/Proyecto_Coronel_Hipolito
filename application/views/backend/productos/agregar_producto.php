@@ -29,6 +29,11 @@
             <span class="text-danger"><?php echo form_error('precio'); ?> </span>
         </div>
         <div class="form-group">
+            <label for="descripcion">Ingrese stock (*)</label>
+            <?php echo form_input(['name' => 'stock', 'id' => 'stock', 'type' => 'number', 'class' => 'form-control', 'placeholder' => 'Stock', 'autofocus' => 'autofocus', 'value' => set_value('precio'), 'min' => '1' ]); ?>
+            <span class="text-danger"><?php echo form_error('stock'); ?> </span>
+        </div>
+        <div class="form-group">
             <label for="imagen">Seleccione una imagen (*)</label>
             <?php echo form_input(['name' => 'imagen', 'id' => 'imagen', 'type' => 'file', 'class' => 'form-control', 'autofocus' => 'autofocus', 'value' => set_value('imagen')]); ?>
             <span class="text-danger"><?php echo form_error('imagen'); ?> </span>

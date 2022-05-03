@@ -1,3 +1,10 @@
+<?php if(isset($_SESSION['message'])){?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <i class="fa fa-check-circle" aria-hidden="true"></i> <?= $_SESSION['message']?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php unset($_SESSION["message"]); } ?>
+
 <div class="row align-items-center justify-content-center">
     <div class="col-xs-10 col-md-6">
         <h4 class="text-center mt-3">INICIAR SESIÓN</h4>

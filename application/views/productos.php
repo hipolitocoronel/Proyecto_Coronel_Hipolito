@@ -16,6 +16,7 @@
                 </ul>
                 <div class="col-xs-12 col-md-2">
                     <p class="font-big">$ <?php echo $producto->precio?></p>
+                    <?php if ($this->session->userdata('login')){?>
                     <button type="button" id="modal-show-product" class="btn btn-light border font-sec show-modal"
                         data-bs-toggle="modal" data-bs-target="#modalProducto" data-bs-id="<?= $producto->idProducto?> "
                         data-bs-precio="<?= $producto->precio?> "
@@ -24,7 +25,12 @@
                         data-bs-img="<?= $producto->img_producto?> " data-bs-nombre="<?= $producto->nombre?> "> Ver más
                         <i class="fas fa-file-alt"></i>
                     </button>
-
+                   <?php } else{ ?>
+                        <a class="btn btn-light border font-sec" href="<?php echo base_url('login_index')?>" role="button"> 
+                        Ver más
+                        <i class="fas fa-file-alt"></i>
+                    </a>
+                   <?php } ?>
                 </div>
             </div>
         </li>
