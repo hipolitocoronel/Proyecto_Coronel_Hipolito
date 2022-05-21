@@ -19,8 +19,9 @@
                 foreach($categorias as $categoria){
                     $lista[$categoria->idCategoria] = $categoria->categoria_descripcion;
                 }
-                echo form_dropdown('categoria',$lista,'0', 'class="form-control" ');
+                echo form_dropdown('categoria', $lista,'0', 'class="form-control" ');
             ?>
+            <span class="text-danger"><?php echo form_error('categoria'); ?> </span>
         </div>
         <div class="form-group">
             <label for="descripcion">Ingrese precio (*)</label>

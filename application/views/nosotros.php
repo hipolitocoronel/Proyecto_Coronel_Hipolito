@@ -1,6 +1,6 @@
 <h2 class="py-3 text-center">¿Quiénes Somos?</h2>
 <div class="row px-5">
-    <div class="col col-7">
+    <div class="col-xs-12 col-lg-7">
         <h3>Empresa</h3>
         <p class="font-sec">
             Arandu surge como empresa familiar en el año 1987, de la necesidad que se veía en la capital federal de la
@@ -14,19 +14,15 @@
             el oro, piedras, maderas, entre otros.
         </p>
     </div>
-    <div class="col col-5">
-        <h3>Misión</h3>
-        <p class="font-sec">
-            Mantener y promover nuestros usos y costumbres tradicionales, que junto al arte y el campo, forman parte del
-            patrimonio cultural que nos identifica.
-        </p>
-        <h3>Visión</h3>
-        <p class="font-sec">
-            Afianzar nuestra marca en el tiempo, para que Arandú sea reconocida como la mayor talabartería del país,
-            como así también el mayor referente cultural de la Argentina rural.
-        </p>
+    <div class="col-xs-12 col-lg-5">
+        <div class="card">
+              <img class="card-img-top" src="https://artesaniasdecolombia.com.co/Documentos/Glosario/917_campechana-g.jpg" alt="">
+            <div class="card-footer text-muted">
+                Talabartería arandú - 2015 -
+            </div>
+        </div>
     </div>
-    <div class="col col-12">
+    <div class="col-xs-12 col-lg-7">
         <h3>Calidad</h3>
         <p class="font-sec">
             La calidad con la que trabajamos es, de principio a fin, un compromiso que tenemos con lo que hacemos. Desde
@@ -36,6 +32,18 @@
             duración en el tiempo y que su uso satisfaga las necesidades para las cuales fue adquirido. El trabajo
             manual es la fuente principal de nuestros productos, siendo la perfección de este el atributo más
             importante. Las manos, de nuestros artesanos, sintetizan esa pasión con la que trabajamos.
+        </p>
+    </div>
+    <div class="col-xs-12 col-lg-5">
+        <h3>Misión</h3>
+        <p class="font-sec">
+            Mantener y promover nuestros usos y costumbres tradicionales, que junto al arte y el campo, forman parte del
+            patrimonio cultural que nos identifica.
+        </p>
+        <h3>Visión</h3>
+        <p class="font-sec">
+            Afianzar nuestra marca en el tiempo, para que Arandú sea reconocida como la mayor talabartería del país,
+            como así también el mayor referente cultural de la Argentina rural.
         </p>
     </div>
 </div>

@@ -49,12 +49,12 @@ class User_controller extends CI_Controller {
 
     function editar_usuario($id)
     {
-        $usuario = $this->user_model->buscar_usuario_id($id);
+        $usuario = $this->user_model->searchUserId($id);
         $perfil = $this->user_model->select_perfiles();
 
         $data['id'] = $usuario->idUsuario;
         $data['nombre'] = $usuario->nombre;
-        $data['email'] = $usuario->email;
+        $data['correo'] = $usuario->correo;
         $data['password'] = base64_decode($usuario->password);
         $data['idPerfil'] = $usuario->idPerfil;
         $data['perfil'] = $perfil;
@@ -62,6 +62,36 @@ class User_controller extends CI_Controller {
         $this->load->view('plantillas/header', array('title' => "Editar USUARIO"));
         $this->load->view('plantillas/navbar_admin');
         $this->load->view('backend/usuarios/editar_usuario', $data);
+    }
+
+    public function actualizar_usuario($id)
+    {
+        //reglas de formularios
+        $this->form_validation->set_rules('nombre', 'Nombre del usuario', 'required');
+        $this->form_validation->set_rules('correo', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('perfil', 'Seleccionar un perfil', 'required|callback_select_validate');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
+        //mensajes
+        $this->form_validation->set_message('valid_email', 'El campo %s debe ser un mail válido');
+        $this->form_validation->set_message('integer', 'El campo %s debe poseer solo numeros enteros');
+        $this->form_validation->set_message('min_length', 'El campo %s debe contener como mínimo %d caracteres');
+        
+        $this->form_validation->set_message('required', 'El campo %s es obligatorio');
+        //comprueba si se ingreso correctamente los formularios
+        if ($this->form_validation->run() == FALSE) {
+            $this->editar_usuario($id);
+        } else {
+            $data = array(
+                'nombre' => $this->input->post('nombre'),
+                'correo' => $this->input->post('correo'),
+                'password' => base64_encode($this->input->post('password')),
+                'idPerfil' => $this->input->post('perfil')
+            );
+
+            $this->user_model->actualizar_usuario($data, $id);
+            redirect('ver_usuarios');
+        }
+
     }
 
     public function iniciar_sesion(){
@@ -83,8 +113,7 @@ class User_controller extends CI_Controller {
         $usuario = $this->input->post('correo');
         $pass = $this->input->post('password');
         $contrasenia = base64_encode($pass);
-        $this->load->model('user_model');
-        $user = $this->user_model->searchUser($usuario, $pass);
+        $user = $this->user_model->searchUser($usuario, $contrasenia);
         if ($user && $user->estado != 2) {
             $dateUser = array(
                 'idUsuario' => $user->idUsuario,
@@ -125,6 +154,7 @@ class User_controller extends CI_Controller {
         $this->form_validation->set_message('integer', 'El campo %s debe poseer sólo números enteros');
         $this->form_validation->set_message('required', 'El campo %s es obligatorio');
         $this->form_validation->set_message('min_length', 'El campo %s debe contener como mínimo %d caracteres');
+        $this->form_validation->set_message('matches', 'Las contraseñas no coinciden');
 
         if($this->form_validation->run()==FALSE){
             $this->register_index();
@@ -140,12 +170,10 @@ class User_controller extends CI_Controller {
 			
 			'nombre' => $this->input->post('nombre'),
 			'correo' =>$this->input->post('correo'),
-			'password' => $this->input->post('password'),
+			'password' => base64_encode($this->input->post('password')),
 			'idPerfil' => 2,
 			'estado' => 1
 
-			
-			
 		);
 		$this->load->model('user_model');
 		$this->user_model->saveUser($user);
@@ -158,5 +186,16 @@ class User_controller extends CI_Controller {
     {
         $this->session->sess_destroy();
         redirect('principal');
+    }
+
+     
+    function select_validate($perfil)
+    {
+        if ($perfil == "0") {
+            $this->form_validation->set_message('select_validate', 'Seleccione un perfil');
+            return false;
+        } else {
+            return true;
+        }
     }
 }

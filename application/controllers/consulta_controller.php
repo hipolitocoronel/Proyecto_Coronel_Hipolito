@@ -31,6 +31,14 @@ class Consulta_controller extends CI_Controller {
         redirect('principal');
     }
 
+    public function contacto(){
+		$data['title']='Contacto';
+		$this->load->view('plantillas/header', $data);
+		$this->load->view('plantillas/navbar');
+		$this->load->view('contacto');
+		$this->load->view('plantillas/footer');
+	}
+
     public function registrar_consulta()
     {
         $this->form_validation->set_rules('nombre', 'Nombre', 'required');
@@ -40,7 +48,7 @@ class Consulta_controller extends CI_Controller {
         $this->form_validation->set_message('required', 'El campo %s es obligatorio');
 
         if ($this->form_validation->run() == FALSE) {
-            redirect('contacto');
+            $this->contacto();
         } else {
             $this->insertar_consulta();
         }

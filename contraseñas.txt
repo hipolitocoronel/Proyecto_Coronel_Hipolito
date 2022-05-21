@@ -1,0 +1,9 @@
+﻿Contraseñas de los usuarios:
+
+[ADMIN] 
+hipolitocoronel1522@gmail.com=> ismael333
+
+[CLIENTES]
+fabianayaquelintorrrs@gmail.com=>fabiana123
+antoniocoronel368@gmail.com=>antonio123
+juancoronel@gmail.com=>juan1234

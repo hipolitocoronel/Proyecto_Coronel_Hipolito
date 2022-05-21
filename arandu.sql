@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2022 a las 16:54:52
+-- Tiempo de generación: 09-03-2022 a las 04:45:57
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -62,7 +62,30 @@ CREATE TABLE `consulta` (
 --
 
 INSERT INTO `consulta` (`idConsulta`, `nombre`, `correo`, `asunto`, `consulta`, `estado`) VALUES
-(2, 'Coronel Hipolito', 'hipolitocoronel1522@gmail.com', 'ni idea', 'assssssssssssssssssssssss', 0);
+(2, 'Coronel Hipolito', 'hipolitocoronel1522@gmail.com', 'ni idea', 'assssssssssssssssssssssss', 0),
+(3, 'Fabiana', 'fabianayaquelintorrrs@gmail.com', 'Prueba', 'Hola como estas?', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_venta`
+--
+
+CREATE TABLE `detalle_venta` (
+  `idVentaDet` int(11) NOT NULL,
+  `idProducto` int(11) NOT NULL,
+  `detalle_cantidad` int(11) NOT NULL,
+  `detalle_precio` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `detalle_venta`
+--
+
+INSERT INTO `detalle_venta` (`idVentaDet`, `idProducto`, `detalle_cantidad`, `detalle_precio`) VALUES
+(1, 1, 1, 5800),
+(2, 1, 1, 5950),
+(2, 4, 1, 123);
 
 -- --------------------------------------------------------
 
@@ -104,7 +127,12 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `precio`, `img_producto`, `estado`, `idCategoria`) VALUES
-(1, 'Mate Imperial Alpaca Premium Bombilla Pico De Loro Alpaca', 'Incluye bombilla 100% Alpaca (no bañada) mismo material que la virola mismo tono misma durabilidad y', '5800.00', 'mate_p.jpg', 1, 1);
+(1, 'Canasta Matera Cuadrada Eco Cuero', 'CANASTA MATERA CUADRADA EN CUERO ECO - COLORES NEGRO - MARRON OSCURO - MARRON CLARO', '8950.00', 'canasta.jpg', 1, 4),
+(4, 'Canasta Matera Portatermo Uruguaya De Cuero', 'Entra perfectamente un termo de 1litro, 2 latas de 12cm y un mate', '8567.00', 'termera.jpg', 1, 4),
+(5, 'Mate Uruguayo De Calabaza Premium Mas Bombilla Pico De Loro', 'MATE elaborado con materiales de primera calidad, calabaza seleccionada de paredes gruesas.', '2690.00', 'mate_p2.jpg', 1, 1),
+(6, 'Mate Imperial Marrón Cuero Virola Alpaca ', 'Al ser mates realmente artesanales de calidad, no hay dos iguales, tanto en los tamaños como en los ', '4890.00', 'mate.jpg', 1, 1),
+(7, 'Bombilla Mate Pico De Loro Acero Inoxidable Cuchara Paleta', 'BOMBILLA PICO DE LORO PALETA TIPO CUCHARA - ACERO INOXIDABLE', '1236.00', 'bombilla.jpg', 1, 2),
+(8, 'Cinturon Hombre Cintos Hombre Cuero Genuino', 'Cinturón Hombre Cuero Cintos Hombre Cinto Cuero Genuino Cinto De Vestir', '1399.00', 'cinto.jpg', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -126,9 +154,30 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nombre`, `correo`, `password`, `idPerfil`, `estado`) VALUES
-(1, 'Hipolito Coronel', 'hipolitocoronel1522@gmail.com', 'ismael333', 1, 1),
-(2, 'Fabiana Torres', 'fabianayaquelintorrrs@gmail.com', 'holaa', 2, 1),
-(3, 'Antonio Coronel', 'antoniocoronel@gmail.com', 'antonio', 2, 2);
+(1, 'Hipolito Coronel', 'hipolitocoronel1522@gmail.com', 'aXNtYWVsMzMz', 1, 1),
+(2, 'Fabiana Torres', 'fabianayaquelintorrrs@gmail.com', 'ZmFiaWFuMTIz', 2, 1),
+(3, 'Antonio Coronel', 'antoniocoronel@gmail.com', 'YW50b25pbzEyMw==', 2, 1),
+(4, 'Juan Coronel', 'juancoronel@gmail.com', 'anVhbjEyMzQ=', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `venta`
+--
+
+CREATE TABLE `venta` (
+  `idVenta` int(11) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `venta_fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`idVenta`, `idCliente`, `venta_fecha`) VALUES
+(1, 2, '2022-03-08'),
+(2, 2, '2022-03-09');
 
 --
 -- Índices para tablas volcadas
@@ -165,6 +214,12 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`idUsuario`);
 
 --
+-- Indices de la tabla `venta`
+--
+ALTER TABLE `venta`
+  ADD PRIMARY KEY (`idVenta`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -178,7 +233,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `consulta`
 --
 ALTER TABLE `consulta`
-  MODIFY `idConsulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idConsulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `perfil`
@@ -190,13 +245,19 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `venta`
+--
+ALTER TABLE `venta`
+  MODIFY `idVenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

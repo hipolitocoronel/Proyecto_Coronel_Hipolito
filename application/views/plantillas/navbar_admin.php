@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarNavDropdown">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-flex w-100 justify-content-end">
         <li class="nav-item">
           <a id="inicio" class="nav-link active" aria-current="page" href="<?php echo base_url('administrador')?>">Inicio</a>
         </li>

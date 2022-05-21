@@ -1,5 +1,5 @@
 <h4 class="text-center mt-3">ENVIANOS UN CORREO</h4>
-<div class="container border w-50 d-flex align-items-center flex-column">
+<div class="container border w-75 d-flex align-items-center flex-column">
     <div class="font-sec w-100 p-4">
         <?php echo form_open('agregar_consulta'); ?>
         <div class="info">
@@ -28,7 +28,7 @@
             <span class="text-danger font-sec"><?php echo form_error('mensaje'); ?> </span>
         </div>
         <div class="mt-3">
-            <?php echo form_submit('Enviar', 'Enviar', "class='btn  btn-dark w-100'"); ?>
+            <?php echo form_submit('agregar_consulta', 'Enviar', "class='btn  btn-dark w-100'"); ?>
         </div>
         <?php echo form_close()?>
     </div>

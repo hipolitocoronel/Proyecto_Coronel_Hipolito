@@ -55,6 +55,12 @@ class Index_Controller extends CI_Controller
 		$this->load->view('plantillas/footer.php');
 	}
 
+	public function venta_index(){
+		$this->load->view('plantillas/header.php', array('title'=>'Venta'));
+		$this->load->view('plantillas/navbar.php');
+		$this->load->view('venta.php');
+	}
+
 	
 	
 

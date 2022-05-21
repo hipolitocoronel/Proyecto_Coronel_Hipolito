@@ -68,24 +68,24 @@ class Producto_Controller extends CI_Controller
 
     public function activar_producto($id = !NULL){
         $data = array(
-            'producto_estado' => 1
+            'estado' => 1
         );
         $this->producto_model->actualizar_producto($data, $id);
-        $this->gestionar_productos();
+        redirect('ver_productos');
     }
 
     public function eliminar_producto($id = !NULL){
         $data = array(
-            'producto_estado' => 0
+            'estado' => 0
         );
         $this->producto_model->actualizar_producto($data, $id);
-        $this->gestionar_productos();
+        redirect('ver_productos');
     }
 
 
     public function actualizar_producto($id){
         //validaciones de formulario
-        $this->form_validation->set_rules('producto_nombre', 'Nombre del producto', 'required');
+        $this->form_validation->set_rules('nombre', 'Nombre del producto', 'required');
         $this->form_validation->set_rules('descripcion', 'Descripcion del producto', 'required');
         $this->form_validation->set_rules('precio', 'Precio del producto', 'required|numeric');
 
@@ -100,7 +100,7 @@ class Producto_Controller extends CI_Controller
         
         //comprueba si se ingreso correctamente los formularios
         if ($this->form_validation->run() == FALSE) {
-            $this->editar_producto($id);
+            $this->editar_producto_index($id);
         } else {
             //sube o actualiza la imagen
             $config['upload_path'] = './uploads/';
@@ -111,26 +111,28 @@ class Producto_Controller extends CI_Controller
 
             if (!$this->upload->do_upload('imagen')) {
                 $data = array(
-                    'producto_nombre' => $this->input->post('producto_nombre'),
-                    'producto_categoria' => $this->input->post('categoria'),
-                    'producto_descripcion' => $this->input->post('descripcion'),
-                    'producto_precio' => $this->input->post('precio'),
-                    'producto_estado' => 1
+                    'nombre' => $this->input->post('nombre'),
+                    'descripcion' => $this->input->post('descripcion'),
+                    'idCategoria' => $this->input->post('categoria'),
+                    'precio' => $this->input->post('precio'),
+                    'img_producto' => $_FILES['imagen']['name'],
+                    'estado' => 1
                 );
                 
             } else {
                 $data = array(
-                    'producto_nombre' => $this->input->post('producto_nombre'),
-                    'producto_categoria' => $this->input->post('categoria'),
-                    'producto_descripcion' => $this->input->post('descripcion'),
-                    'producto_precio' => $this->input->post('precio'),
-                    'producto_imagen' => $_FILES['imagen']['name'],
-                    'producto_estado' => 1
+                    'nombre' => $this->input->post('nombre'),
+                    'descripcion' => $this->input->post('descripcion'),
+                    'idCategoria' => $this->input->post('categoria'),
+                    'precio' => $this->input->post('precio'),
+                    'img_producto' => $_FILES['imagen']['name'],
+                    'estado' => 1
                 );
                 
             }
             $this->producto_model->actualizar_producto($data, $id);
-            /*$this->gestionar_productos();*/
+            $_SESSION['message']="Producto actualizado correctamente";
+            redirect('ver_productos');
         }
     }
 
@@ -161,7 +163,7 @@ class Producto_Controller extends CI_Controller
                 );
                 //guarda producto
                 $this->producto_model->guardar_producto($data);
-                $this->agregar_producto_index();
+                redirect('ver_productos');
             }
         } else {
             //guardar el producto
@@ -174,7 +176,8 @@ class Producto_Controller extends CI_Controller
                     'estado' => 1
             );
             $this->producto_model->guardar_producto($data);
-            $this->agregar_producto_index();
+            $_SESSION['message']="Producto guardado correctamente";
+            redirect('ver_productos');
         }
     }
 
@@ -198,6 +201,17 @@ class Producto_Controller extends CI_Controller
         } else {
             return true;
         }
+    }
+
+    public function get_product_by_id()
+    {
+        $id = $this->input->post('idProducto');
+        $data = $this->producto_model->select_idProducto($id); 
+        $arr = array('success' => false, 'data' => '');
+        if($data){
+            $arr = array('success' => true, 'data' => $data);
+        }
+        echo json_encode($arr);
     }
     
 

@@ -28,17 +28,18 @@ class Carrito_controller extends CI_Controller {
 		$this->carrito_index();
 }
 
-public function borrar($id){
-	if($id=="all"){
-		$this->cart->destroy();
-	}else{
-		$data = array(
-			'rowid' => $id,
-			'qty' => 0
-		);
-		$this->cart->update($data);
+	public function borrar($id){
+		if($id=="all"){
+			$this->cart->destroy();
+		}else{
+			$data = array(
+				'rowid' => $id,
+				'qty' => 0
+			);
+			$this->cart->update($data);
+		}
+		$this->carrito_index();
 	}
-	$this->carrito_index();
-}
+
 
 }
