@@ -69,7 +69,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+<<<<<<< HEAD
                 <button type="button" class="btn btn-dark">Confirmar compra</button>
+=======
+                <a href="<?php echo base_url('venta_controller/guardar_venta') ?>" type="button" class="btn btn-dark">Confirmar compra</a>
+>>>>>>> 55d7b211f4a4bc7898253273be210221790cd70a
             </div>
         </div>
     </div>

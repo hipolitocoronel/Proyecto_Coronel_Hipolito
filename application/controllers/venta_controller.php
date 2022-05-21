@@ -38,12 +38,24 @@ class Venta_controller extends CI_Controller
             );
 
             $this->ventas_model->guardar_detalle_venta($detalle_venta);
+
+            $producto = $this->producto_model->select_idProducto($detalle_venta['idProducto']);
+            $producto[0]->stock -= $detalle_venta['detalle_cantidad'];
+            $this->producto_model->actualizar_producto($producto[0],$detalle_venta['idProducto']);
         }
         $this->cart->destroy();
-        //mensaje de agradecimiento por la compra
-        $this->session->set_flashdata('msg', 'Gracias por su compra!');
+        
         //redirecciona al catalogo
-        redirect('productos');
-        $this->session->set_flashdata('msg', 'Gracias por su compra!');
+        //redirect('productos');
+        $this->ver_detalle_venta($venta_id);
+    }
+
+    public function ver_detalle_venta($id){
+        $data['detalle_ventas'] = $this->ventas_model->select_detalle_ventas($id);
+        $data['id'] = $id;
+
+		$this->load->view('plantillas/header',array('title'=>"Compra finalizada"));		
+		$this->load->view('plantillas/navbar');
+		$this->load->view('venta', $data);
     }
 }

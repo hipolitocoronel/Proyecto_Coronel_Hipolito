@@ -19,10 +19,10 @@ class Carrito_controller extends CI_Controller {
 
 	public function agregar_carrito(){
 		$data = array(
-			'id' => $this->input->post('id'),
-			'name' => $this->input->post('nombre'),
-			'price' => $this->input->post('precio'),
-			'qty' => 1
+			'id' => (integer)$this->input->post('idProducto'),
+			'name' =>(string) $this->input->post('nombreProducto'),
+			'price' =>(int) $this->input->post('precioProducto'),
+			'qty' => (integer) $this->input->post('cantidadProducto')
 		);
 		$this->cart->insert($data);
 		$this->carrito_index();

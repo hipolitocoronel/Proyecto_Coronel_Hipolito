@@ -12,6 +12,11 @@ class Ventas_model extends CI_Model
         $this->db->insert('venta',$data);
     }
 
+    public function actualizar_stock($id,$data){
+        $this->db->where('idUsuario',$id);
+        $this->db->update('producto',$data);
+    }
+
     public function guardar_detalle_venta($data){
         $this->db->insert('detalle_venta',$data);
     }
