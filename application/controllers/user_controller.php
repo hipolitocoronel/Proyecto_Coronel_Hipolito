@@ -66,12 +66,6 @@ class User_controller extends CI_Controller {
 
     public function actualizar_usuario($id)
     {
-<<<<<<< HEAD
-        //reglas de formularios
-        $this->form_validation->set_rules('nombre', 'Nombre del usuario', 'required');
-        $this->form_validation->set_rules('correo', 'Email', 'required|valid_email');
-        $this->form_validation->set_rules('perfil', 'Seleccionar un perfil', 'required|callback_select_validate');
-=======
         $usuario = $this->user_model->searchUserId($id);
         //reglas de formularios
         $this->form_validation->set_rules('nombre', 'Nombre del usuario', 'required');
@@ -80,7 +74,6 @@ class User_controller extends CI_Controller {
             $this->form_validation->set_rules('perfil', 'Seleccionar un perfil', 'required|callback_select_validate');
         }
         
->>>>>>> 55d7b211f4a4bc7898253273be210221790cd70a
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
         //mensajes
         $this->form_validation->set_message('valid_email', 'El campo %s debe ser un mail válido');
@@ -91,12 +84,8 @@ class User_controller extends CI_Controller {
         //comprueba si se ingreso correctamente los formularios
         if ($this->form_validation->run() == FALSE) {
             $this->editar_usuario($id);
-<<<<<<< HEAD
-        } else {
-=======
         } else if($usuario->idPerfil==2) {
 
->>>>>>> 55d7b211f4a4bc7898253273be210221790cd70a
             $data = array(
                 'nombre' => $this->input->post('nombre'),
                 'correo' => $this->input->post('correo'),
@@ -105,9 +94,6 @@ class User_controller extends CI_Controller {
             );
 
             $this->user_model->actualizar_usuario($data, $id);
-<<<<<<< HEAD
-            redirect('ver_usuarios');
-=======
             $_SESSION['message']="Usuario actualizado correctamnte";
             redirect('ver_usuarios');
         }else{
@@ -122,7 +108,6 @@ class User_controller extends CI_Controller {
             $_SESSION['message']="Usuario actualizado correctamnte";
             redirect('ver_usuarios');
             
->>>>>>> 55d7b211f4a4bc7898253273be210221790cd70a
         }
 
     }

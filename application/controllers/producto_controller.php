@@ -203,19 +203,6 @@ class Producto_Controller extends CI_Controller
         }
     }
 
-<<<<<<< HEAD
-    public function get_product_by_id()
-    {
-        $id = $this->input->post('idProducto');
-        $data = $this->producto_model->select_idProducto($id); 
-        $arr = array('success' => false, 'data' => '');
-        if($data){
-            $arr = array('success' => true, 'data' => $data);
-        }
-        echo json_encode($arr);
-    }
-=======
->>>>>>> 55d7b211f4a4bc7898253273be210221790cd70a
     
 
 }
