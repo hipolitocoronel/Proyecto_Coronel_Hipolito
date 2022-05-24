@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-03-2022 a las 04:45:57
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Tiempo de generación: 24-05-2022 a las 17:06:37
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -119,20 +119,21 @@ CREATE TABLE `producto` (
   `precio` decimal(10,2) NOT NULL,
   `img_producto` text NOT NULL,
   `estado` int(1) NOT NULL,
-  `idCategoria` int(11) NOT NULL
+  `idCategoria` int(11) NOT NULL,
+  `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `precio`, `img_producto`, `estado`, `idCategoria`) VALUES
-(1, 'Canasta Matera Cuadrada Eco Cuero', 'CANASTA MATERA CUADRADA EN CUERO ECO - COLORES NEGRO - MARRON OSCURO - MARRON CLARO', '8950.00', 'canasta.jpg', 1, 4),
-(4, 'Canasta Matera Portatermo Uruguaya De Cuero', 'Entra perfectamente un termo de 1litro, 2 latas de 12cm y un mate', '8567.00', 'termera.jpg', 1, 4),
-(5, 'Mate Uruguayo De Calabaza Premium Mas Bombilla Pico De Loro', 'MATE elaborado con materiales de primera calidad, calabaza seleccionada de paredes gruesas.', '2690.00', 'mate_p2.jpg', 1, 1),
-(6, 'Mate Imperial Marrón Cuero Virola Alpaca ', 'Al ser mates realmente artesanales de calidad, no hay dos iguales, tanto en los tamaños como en los ', '4890.00', 'mate.jpg', 1, 1),
-(7, 'Bombilla Mate Pico De Loro Acero Inoxidable Cuchara Paleta', 'BOMBILLA PICO DE LORO PALETA TIPO CUCHARA - ACERO INOXIDABLE', '1236.00', 'bombilla.jpg', 1, 2),
-(8, 'Cinturon Hombre Cintos Hombre Cuero Genuino', 'Cinturón Hombre Cuero Cintos Hombre Cinto Cuero Genuino Cinto De Vestir', '1399.00', 'cinto.jpg', 1, 3);
+INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `precio`, `img_producto`, `estado`, `idCategoria`, `stock`) VALUES
+(1, 'Canasta Matera Cuadrada Eco Cuero', 'CANASTA MATERA CUADRADA EN CUERO ECO - COLORES NEGRO - MARRON OSCURO - MARRON CLARO', '8950.00', 'canasta.jpg', 1, 4, 10),
+(4, 'Canasta Matera Portatermo Uruguaya De Cuero', 'Entra perfectamente un termo de 1litro, 2 latas de 12cm y un mate', '8567.00', 'termera.jpg', 1, 4, 50),
+(5, 'Mate Uruguayo De Calabaza Premium Mas Bombilla Pico De Loro', 'MATE elaborado con materiales de primera calidad, calabaza seleccionada de paredes gruesas.', '2690.00', 'mate_p2.jpg', 1, 1, 2),
+(6, 'Mate Imperial Marrón Cuero Virola Alpaca ', 'Al ser mates realmente artesanales de calidad, no hay dos iguales, tanto en los tamaños como en los ', '4890.00', 'mate.jpg', 1, 1, 50),
+(7, 'Bombilla Mate Pico De Loro Acero Inoxidable Cuchara Paleta', 'BOMBILLA PICO DE LORO PALETA TIPO CUCHARA - ACERO INOXIDABLE', '1236.00', 'bombilla.jpg', 1, 2, 30),
+(8, 'Cinturon Hombre Cintos Hombre Cuero Genuino', 'Cinturón Hombre Cuero Cintos Hombre Cinto Cuero Genuino Cinto De Vestir', '1399.00', 'cinto.jpg', 1, 3, 15);
 
 -- --------------------------------------------------------
 
@@ -157,7 +158,8 @@ INSERT INTO `usuarios` (`idUsuario`, `nombre`, `correo`, `password`, `idPerfil`,
 (1, 'Hipolito Coronel', 'hipolitocoronel1522@gmail.com', 'aXNtYWVsMzMz', 1, 1),
 (2, 'Fabiana Torres', 'fabianayaquelintorrrs@gmail.com', 'ZmFiaWFuMTIz', 2, 1),
 (3, 'Antonio Coronel', 'antoniocoronel@gmail.com', 'YW50b25pbzEyMw==', 2, 1),
-(4, 'Juan Coronel', 'juancoronel@gmail.com', 'anVhbjEyMzQ=', 2, 1);
+(4, 'Juan Coronel', 'juancoronel@gmail.com', 'anVhbjEyMzQ=', 2, 1),
+(5, 'Martin', 'martin@gmail.com', 'MTIzNDU2Nzg=', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -251,7 +253,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
