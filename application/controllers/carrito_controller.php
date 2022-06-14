@@ -18,15 +18,16 @@ class Carrito_controller extends CI_Controller {
 	}
 
 	public function agregar_carrito(){
-		$data = array(
-			'id' => (integer)$this->input->post('idProducto'),
-			'name' =>(string) $this->input->post('nombreProducto'),
-			'price' =>(int) $this->input->post('precioProducto'),
-			'qty' => (integer) $this->input->post('cantidadProducto')
-		);
+		$data = [ 
+			"id" => $this->input->post('idProducto'),
+			"name" =>$this->input->post('nombre'),
+			"price" => $this->input->post('precio'),
+			"qty" =>$this->input->post('cantidad')
+		];
 		$this->cart->insert($data);
-		$this->carrito_index();
-}
+		
+		echo json_encode(array("status" => "TRUE"));
+	}
 
 	public function borrar($id){
 		if($id=="all"){

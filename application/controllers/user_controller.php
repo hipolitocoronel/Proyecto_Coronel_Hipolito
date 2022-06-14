@@ -196,7 +196,7 @@ class User_controller extends CI_Controller {
 		$this->load->model('user_model');
 		$this->user_model->saveUser($user);
 
-        $_SESSION['message']="Cuanta creada correctamnte, por favor inicie sesión!";
+        $_SESSION['message']="Cuanta creada correctamente, por favor inicie sesión!";
 		$this->login_index();
 	}
 

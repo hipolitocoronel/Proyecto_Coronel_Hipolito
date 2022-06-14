@@ -54,7 +54,7 @@ $route['principal'] = 'index_controller/index';
 $route['contacto'] = 'index_controller/contacto';
 $route['nosotros'] = 'index_controller/nosotros';
 $route['terminos'] = 'index_controller/terminos';
-$route['productos'] = 'index_controller/productos';
+$route['productos'] = 'index_controller/productos1';
 $route['venta'] = 'index_controller/venta_index';
 
 /*LOGIN*/

@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/principal.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/inicio.css?">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
-
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="<?= base_url('assets/js/jquery.js')?>"></script>
 
     <title><?php echo $title?> </title>
 </head>
