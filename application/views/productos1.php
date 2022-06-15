@@ -81,7 +81,7 @@
                         echo form_hidden('precio');
                         echo form_hidden('nombre');
                     ?>
-                    <button type="button" id="submitModal" class="btn btn-dark"> 
+                    <button type="submit" id="submitModal" class="btn btn-dark"> 
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         Agregar al carrito
                     </button>
@@ -119,24 +119,11 @@
             $('input[name="nombre"]').val($('.modal-title').text());
 
             if(cant>stock){
-                console.log('Stock: '+stock);
-                console.log('Cantidad: '+cant);
                 $('#msjCantidad').text('Stock Insuficiente!');
             }else{
-                $.ajax({
-                    url: "<?= base_url('comprar')?>",
-                    type: "POST",
-                    data: $('form').serialize(),
-                    dataType: "JSON",
-                    success: function(data){
-                        console.log(data);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown ){
-                        alert(errorThrown);
-                    }
-                    
-                })
-            }
+                $('#submitModal').submit();
+            } 
+            
         });  
 
         $('.closeModal').click(function(){

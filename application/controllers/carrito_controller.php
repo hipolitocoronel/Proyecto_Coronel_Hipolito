@@ -26,7 +26,7 @@ class Carrito_controller extends CI_Controller {
 		];
 		$this->cart->insert($data);
 		
-		echo json_encode(array("status" => "TRUE"));
+		$this->carrito_index();
 	}
 
 	public function borrar($id){

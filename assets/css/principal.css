@@ -63,7 +63,14 @@ footer  p, li {
     list-style: none;
 }
 
+.card-product:hover{
+    outline: 1px solid #777;
+}
 
+.card-product:hover img{
+    transform: scale(.9);
+    transition: .3s;
+}
 
 @media screen and (max-width: 600px) {
     *{
