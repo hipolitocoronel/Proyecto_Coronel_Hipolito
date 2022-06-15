@@ -7,7 +7,7 @@
         <a name="" id="" class="btn btn-outline-light w-50 ml-5 font-sec" href="<?php echo base_url('nosotros')?>"
             role="button">Conocénos</a>
         <i class="mx-1"></i>
-        <a name="" id="" class="btn btn-outline-light w-50 mr-5 font-sec" href="<?php echo base_url('pagina_proceso')?>"
+        <a name="" id="" class="btn btn-outline-light w-50 mr-5 font-sec" href="<?php echo base_url('productos')?>"
             role="button">Ver Productos</a>
         <i class="mx-3"></i>
     </div>
@@ -17,7 +17,7 @@
     <h3>CATEGORÍAS PRINCIPALES</h3>
     <div class="row gy-2">
         <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card">
+            <div class="card card-product">
                 <a href="">
                     <img src="<?php base_url()?>assets/img/mate.jpg" class="card-img-top" alt="">
                 </a>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card">
+            <div class="card card-product">
                 <a href="">
                     <img src="<?php base_url()?>assets/img/termera.jpg" class="card-img-top" alt="">
                 </a>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card">
+            <div class="card card-product">
                 <a href="">
                     <img src="<?php base_url()?>assets/img/bombilla.jpg" class="card-img-top" alt="">
                 </a>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card">
+            <div class="card card-product">
                 <a href="">
                     <img src="<?php base_url()?>assets/img/cinto.jpg" class="card-img-top" alt="">
                 </a>

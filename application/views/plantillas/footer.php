@@ -24,7 +24,7 @@
                         <a href="<?php echo base_url('/')?>" class="font-sec text-decoration-none text-light">Inicio</a>
                     </p>
                     <p>
-                        <a href="<?php echo base_url('pagina_proceso')?>" class="font-sec text-decoration-none text-light">Productos</a>
+                        <a href="<?php echo base_url('productos')?>" class="font-sec text-decoration-none text-light">Productos</a>
                     </p>
                     <p>
                         <a href="<?php echo base_url('contacto')?>" class="font-sec text-decoration-none text-light">Contacto</a>

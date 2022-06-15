@@ -23,7 +23,7 @@
             <td class="font-sec">
 
                 <a href="<?php echo base_url("admin_controller/ver_detalle_venta/$venta->idVenta")?>"
-                    class="btn btn-outline-dark">Ver detalle</a>
+                    class="btn btn-dark w-100">Ver detalle</a>
 
             </td>
         </tr>

@@ -1,7 +1,7 @@
 <div class="row container mt-3 mx-auto gy-2">
 <h4 class="">FORMULARIO DE CONTACTO</h4>
     <div class="col-xs-12 col-lg-8 mx-0 font-sec ">
-        <?= form_open('sendConsulta')?>
+        <?= form_open('agregar_consulta')?>
         <div class="">
             <label for="nombre">Ingrese su nombre (*)</label>
             <input type="text" class="form-control" name="nombre" id="nombre" value=<?=set_value('nombre')?>>
@@ -19,8 +19,8 @@
         </div>
         <div class="mb-4">
             <label for="consulta" class="form-label">Ingrese su mensaje (*)</label>
-            <textarea name="consulta" id="consulta" class="form-control" rows="3" placeholder="Mensaje"><?=set_value('nombre')?></textarea>
-            <p class="text-danger font-sec"><?php echo form_error('consulta'); ?> </p>
+            <textarea name="mensaje" id="consulta" class="form-control" rows="3" placeholder="Mensaje"><?=set_value('mensaje')?></textarea>
+            <p class="text-danger font-sec"><?php echo form_error('mensaje'); ?> </p>
         </div>
         <div class="mt-3">
             <?= form_submit('Enviar', 'Enviar', "class='btn  btn-dark w-100'"); ?>
