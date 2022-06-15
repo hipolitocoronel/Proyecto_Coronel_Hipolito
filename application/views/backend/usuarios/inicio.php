@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php if(isset($_SESSION['message'])){?>
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     <i class="fa fa-check-circle" aria-hidden="true"></i> <?= $_SESSION['message']?>
@@ -7,7 +5,6 @@
 </div>
 <?php unset($_SESSION["message"]); } ?>
 
->>>>>>> 55d7b211f4a4bc7898253273be210221790cd70a
 <div class="container-fluid">
     <h3 class="mt-3 text-center">Listado de Usuarios</h3>
     <table class="table table-bordered">
@@ -25,11 +22,11 @@
             foreach($usuarios as $usuario){ ?>
 
             <tr>
-                <td><?php echo $usuario->idUsuario; ?></td>
-                <td><?php echo $usuario->nombre; ?></td>
-                <td><?php echo $usuario->correo; ?></td>
-                <td><?php echo $usuario->perfil_descripcion?></td>
-                <td>
+                <td class="font-sec"><?php echo $usuario->idUsuario; ?></td>
+                <td class="font-sec"><?php echo $usuario->nombre; ?></td>
+                <td class="font-sec"><?php echo $usuario->correo; ?></td>
+                <td class="font-sec"><?php echo $usuario->perfil_descripcion?></td>
+                <td class="font-sec">
                     <?php if($usuario->idPerfil==1) {?>
                     <div class="btn-group w-100 gap-1" role="group" aria-label="">
                         <a href="<?php echo base_url("user_controller/editar_usuario/$usuario->idUsuario")?>"
@@ -64,12 +61,9 @@
             <?php }?>
         </tbody>
     </table>
-<<<<<<< HEAD
 </div>
-=======
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
->>>>>>> 55d7b211f4a4bc7898253273be210221790cd70a

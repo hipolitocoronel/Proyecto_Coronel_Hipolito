@@ -16,11 +16,11 @@
             foreach($detalle_ventas as $venta){ ?>
 
         <tr>
-            <td><?php echo $venta->nombre; ?></td>
-            <td><?php echo $venta->descripcion; ?></td>
-            <td><?php echo $venta->detalle_cantidad; ?></td>
-            <td><?php echo $venta->detalle_precio; ?></td>
-            <td><?php echo $venta->detalle_precio * $venta->detalle_cantidad; ?></td>   
+            <td class="font-sec"><?php echo $venta->nombre; ?></td>
+            <td class="font-sec"><?php echo $venta->descripcion; ?></td>
+            <td class="font-sec"><?php echo $venta->detalle_cantidad; ?></td>
+            <td class="font-sec"><?php echo $venta->detalle_precio; ?></td>
+            <td class="font-sec"><?php echo $venta->detalle_precio * $venta->detalle_cantidad; ?></td>   
         </tr>
         <?php }?>
     </tbody>

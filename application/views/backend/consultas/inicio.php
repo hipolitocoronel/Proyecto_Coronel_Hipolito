@@ -20,15 +20,15 @@
             foreach($consultas as $consulta){ 
                 if($consulta->estado==1){?>
             <tr>
-                <td><?php echo $consulta->idConsulta?></td>
-                <td><?php echo $consulta->nombre?></td>
-                <td><?php echo $consulta->correo?></td>
-                <td><?php echo $consulta->asunto?></td>
-                <td><?php echo $consulta->consulta?></td>
-                <td>
+                <td class="font-sec"><?php echo $consulta->idConsulta?></td>
+                <td class="font-sec"><?php echo $consulta->nombre?></td>
+                <td class="font-sec"><?php echo $consulta->correo?></td>
+                <td class="font-sec"><?php echo $consulta->asunto?></td>
+                <td class="font-sec"><?php echo $consulta->consulta?></td>
+                <td class="font-sec">
                     <div class="btn-group w-100" role="group" aria-label="">
                         <a href="<?php echo base_url("consulta_controller/eliminar_consulta/$consulta->idConsulta")?>"
-                            class="btn btn-warning">Marcar como leido</a>
+                            class="btn btn-warning">Leìdo</a>
                     </div>
                 </td>
             </tr>

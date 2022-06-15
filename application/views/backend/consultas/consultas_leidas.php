@@ -15,11 +15,11 @@
             foreach($consultas as $consulta){ 
                 if($consulta->estado==0){ ?>
         <tr>
-            <td><?php echo $consulta->idConsulta?></td>
-            <td><?php echo $consulta->nombre?></td>
-            <td><?php echo $consulta->correo?></td>
-            <td><?php echo $consulta->asunto?></td>
-            <td><?php echo $consulta->consulta?></td>
+            <td class="font-sec"><?php echo $consulta->idConsulta?></td>
+            <td class="font-sec"><?php echo $consulta->nombre?></td>
+            <td class="font-sec"><?php echo $consulta->correo?></td>
+            <td class="font-sec"><?php echo $consulta->asunto?></td>
+            <td class="font-sec"><?php echo $consulta->consulta?></td>
         </tr>
         <?php }}?>
     </tbody>

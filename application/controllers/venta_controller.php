@@ -18,6 +18,7 @@ class Venta_controller extends CI_Controller
         //encabezado de venta
         $encabezado_venta = array(
             'idCliente' => $this->session->userdata('idUsuario'),
+            'total' => $this->cart->total(),
             'venta_fecha' => date('Y-m-d')
         );
 

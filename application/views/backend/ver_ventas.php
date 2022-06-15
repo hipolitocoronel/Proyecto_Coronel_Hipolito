@@ -6,6 +6,7 @@
         <tr>
             <th>Nro de Venta</th>
             <th>Cliente</th>
+            <th>Total</th>
             <th>Fecha</th>
             <th>Acciones</th>
         </tr>
@@ -15,10 +16,11 @@
             foreach($ventas as $venta){ ?>
 
         <tr>
-            <td><?php echo $venta->idVenta; ?></td>
-            <td><?php echo $venta->nombre; ?></td>
-            <td><?php echo $venta->venta_fecha; ?></td>
-            <td>
+            <td class="font-sec"><?php echo $venta->idVenta; ?></td>
+            <td class="font-sec"><?php echo $venta->nombre; ?></td>
+            <td class="font-sec">$<?php echo $venta->total; ?></td>
+            <td class="font-sec"><?php echo $venta->venta_fecha; ?></td>
+            <td class="font-sec">
 
                 <a href="<?php echo base_url("admin_controller/ver_detalle_venta/$venta->idVenta")?>"
                     class="btn btn-outline-dark">Ver detalle</a>
